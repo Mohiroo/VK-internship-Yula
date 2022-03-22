@@ -87,7 +87,7 @@ let banknotes = {
   1000: 10,
   500: 10,
   200: 10,
-  100: 0
+  100: 10
 };
 
 let personWantGet = (ammountNeeded, banknotes) => {
