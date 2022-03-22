@@ -112,7 +112,6 @@ let personWantGet = (ammountNeeded, banknotes) => {
     cashText.style.color = 'red';
   } else {
     let operation = collectedSum(ammountNeeded, nominals);
-    console.log(operation[100] === undefined)
 
     balance.innerHTML = `ВАШ БАЛАНС: ${balanceCount} ₽`;
     cashText.innerHTML = 'Выданные наличные';
