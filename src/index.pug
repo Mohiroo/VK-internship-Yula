@@ -1,0 +1,47 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    title Банкомат Юла
+  body
+    .atm
+      .atm__welcome
+        button.start-button(type="button") Нажните на экран, чтобы начать работу
+      .atm__menu.menu
+        marquee.menu__info 
+          span Курс валют к рублю - ЦБ РФ: 
+          span USD - 104,68
+          span EUR - 115,60
+          span GBP - 138,00
+          span CNY - 16,47
+          span KRW - 86,06
+          span JPY - 87,82
+        .menu__top Ю деньги
+        .menu__middle
+          span.menu__balance
+          span.menu__card
+          button.menu__button Снять наличные
+        .menu__bottom
+        .cash
+          .cash__zone
+            input.cash__input(type="text" placeholder="Введите сумму" maxlength="10")
+          .available-nominal Доступный номинал
+          .cash__nominals
+            .cash__100.cash__banknote
+            .cash__200.cash__banknote
+            .cash__500.cash__banknote
+            .cash__1000.cash__banknote
+            .cash__2000.cash__banknote
+            .cash__5000.cash__banknote
+          .output 
+            p.output__100
+            p.output__200
+            p.output__500
+            p.output__1000 
+            p.output__2000
+            p.output__5000
+          .cash__buttons
+            button.buttons__clear.cash__button Изменить сумму
+            button.buttons__confirmation.cash__button Подтвердить
+            

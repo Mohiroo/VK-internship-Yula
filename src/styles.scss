@@ -1,0 +1,343 @@
+@import "~normalize.css/normalize.css";
+
+// Временное решение
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
+
+
+body {
+  min-width: 320px;
+  max-width: 1920px;
+
+  // background: rgb(126, 185, 129);
+
+  font-family: Montserrat;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.atm {
+  width: 1200px;
+  height: 800px;
+
+  margin: 20px auto;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 15px solid rgb(206, 228, 252);
+  border-radius: 15px;
+
+  &::before {
+    content: '';
+    width: 220px;
+    height: 450px;
+    display: inline-block;
+
+    position: absolute;
+    top: -125px;
+    right: -60px;
+
+    background: rgba(160, 160, 160, 0.2);
+    z-index: 10;
+
+    transform: rotate(-40deg);
+  }
+
+  .atm__welcome {
+    // display: none;
+
+    .start-button {
+      width: 100%;
+      height: 800px;
+
+      background: black;
+      border: none;
+      padding: 0;
+
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 700;
+    }
+  }
+
+  .atm__menu {
+    padding: 20px;
+
+    opacity: 0; // 0
+
+    .menu__info {
+      span {
+        padding-right: 40px;
+      }
+    }
+
+    .menu__top {
+      display: flex;
+      align-items: center;
+
+      margin: 30px 0 30px 20px;
+
+      font-size: 72px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(125deg, rgba(255, 115, 254, 1) 10%, rgba(75, 75, 255, 1) 30%, rgba(0, 232, 255, 1) 55%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      &::before {
+        content: url(./logo.png);
+        width: 100px;
+        height: 100px;
+
+        padding-right: 40px;
+
+        display: inline-block;
+      }
+    }
+
+    .menu__middle {
+      display: flex;
+      align-items: center;
+
+      margin: 60px 0 30px 20px;
+
+      .menu__balance {
+        padding-right: 50px;
+
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .menu__card {
+        width: 110px;
+        height: 60px;
+
+        display: inline-block;
+
+
+        background: linear-gradient(125deg, rgba(255, 115, 254, 0.5) 0%, rgba(75, 75, 255, 0.5) 50%, rgba(0, 232, 255, 0.5) 100%);
+        border-radius: 5px;
+
+        &::before {
+          content: "4759";
+
+
+          position: relative;
+          right: -67px;
+          bottom: -40px;
+
+          font-size: 14px;
+        }
+      }
+
+      .menu__button {
+        height: 42px;
+
+        padding: 10px;
+        margin-left: 250px;
+
+        position: relative;
+
+        border: none;
+        border-radius: 22px;
+        background-color: white;
+
+        color: #BC9CFF;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 15px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          bottom: -5px;
+          left: -5px;
+          right: -4px;
+          background: linear-gradient(125deg, rgba(255, 115, 254, 0.5) 0%, rgba(75, 75, 255, 0.5) 50%, rgba(0, 232, 255, 0.5) 100%);
+          border-radius: 34px;
+          z-index: -1;
+        }
+      }
+    }
+
+    .menu__bottom {
+      // display: none; - рабочий вариант
+      width: 100%;
+      height: 480px;
+
+      background: url(./people.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .cash {
+      display: flex;
+      flex-direction: column;
+
+      opacity: 0;
+
+      .cash__zone {
+        width: 100%;
+        height: 100px;
+
+        margin-top: 30px;
+
+        background: linear-gradient(125deg, rgba(255, 115, 254, 0.2) 0%, rgba(75, 75, 255, 0.2) 50%, rgba(0, 232, 255, 0.2) 100%);
+        border-radius: 6px;
+
+        .cash__input {
+          width: 30%;
+          height: 100px;
+
+          display: block;
+          margin: 0 auto;
+          border: none;
+
+          font-size: 50px;
+          text-align: center;
+          // color: rgb(97, 110, 122);
+
+          color: transparent;
+          text-shadow: 0 0 0 rgb(97, 110, 122);
+
+          &::placeholder {
+            font-size: 32px;
+            color: rgb(140, 147, 153);
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .available-nominal {
+        height: 40px;
+        margin-top: 20px;
+
+        font-size: 18px;        
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .cash__nominals {
+        display: flex;
+        justify-content: space-around;
+
+        height: 52px;
+        margin: 20px 0 0 0;
+        padding: 0 40px 0 40px;
+
+        .cash__banknote {
+          width: 120px;
+          height: 50px;
+          border: 1px solid black;
+          box-shadow: 5px 2px 2px grey;
+
+          position: relative;
+
+          &:before {
+            content: '';
+            width: 80px;
+            height: 50px;
+            display: inline-block;
+            margin-left: 20px;
+            background: linear-gradient(125deg, rgba(225,207,161,1) 0%, rgba(195,167,130,1) 100%);
+          }
+          &::after {
+            content: '100₽';
+            position: absolute;
+            top: 2px;
+            left: 24px;
+
+            font-size: 12px;
+          }          
+        }
+
+        .cash__200 {
+          &:before {
+            background: linear-gradient(125deg, rgba(223,232,213,1) 0%, rgba(175,213,156,1) 100%);
+          }
+          &::after {
+            content: '200₽';
+          }
+        }
+        .cash__500 {
+          &:before {
+            background: linear-gradient(125deg, rgba(202,159,152,1) 0%, rgba(200,157,141,1) 100%);
+          }
+          &::after {
+            content: '500₽';
+          }
+        }
+        .cash__1000 {
+          &:before {
+            background: linear-gradient(125deg, rgba(182,224,214,1) 0%, rgba(101,166,184,1) 100%);
+          }
+          &::after {
+            content: '1000₽';
+          }
+        }
+        .cash__2000 {
+          &:before {
+            background: linear-gradient(125deg, rgba(184,213,245,1) 0%, rgba(137,191,238,1) 100%);
+          }
+          &::after {
+            content: '2000₽';
+          }
+        }
+        .cash__5000 {
+          &:before {
+            background: linear-gradient(125deg, rgba(217,205,183,1) 0%, rgba(197,144,102,1) 100%);
+          }
+          &::after {
+            content: '5000₽';
+          }
+        }
+      }
+
+      .output {
+        display: flex;
+        justify-content: space-around;
+
+        height: 20px;
+        margin: 5px 0 120px 0;
+        padding: 0 40px 0 40px;
+      }
+
+      .cash__buttons {
+        width: 100%;
+        .cash__button {   
+          padding: 16px;
+          border: 1px solid white;
+          border-radius: 12px;
+          
+          font-size: 20px;
+          font-weight: 700;
+          color: white;
+        }
+
+        .buttons__clear {
+          float: left;
+          background-image: radial-gradient( circle 860px at 11.8% 33.5%,  rgba(240,30,92,0.7) 0%, rgba(244,49,74,0.7) 30.5%, rgba(249,75,37,0.7) 56.1%, rgba(250,88,19,0.7) 75.6%, rgba(253,102,2,0.7) 100.2% );
+        }
+        .buttons__confirmation {
+          float: right;
+          background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,0.7) 0%, rgba(12,116,117,0.7) 90% );
+        }
+      }
+    }
+  }
+}

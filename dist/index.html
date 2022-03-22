@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Банкомат Юла</title>
+  <script defer src="/main.bundle.js"></script><link href="/main.css" rel="stylesheet"></head>
+  <body>
+    <div class="atm">
+      <div class="atm__welcome">
+        <button class="start-button" type="button">Нажните на экран, чтобы начать работу</button>
+      </div>
+      <div class="atm__menu menu">
+        <marquee class="menu__info"> <span>Курс валют к рублю - ЦБ РФ: </span><span>USD - 104,68</span><span>EUR - 115,60</span><span>GBP - 138,00</span><span>CNY - 16,47</span><span>KRW - 86,06</span><span>JPY - 87,82</span></marquee>
+        <div class="menu__top">Ю деньги</div>
+        <div class="menu__middle"><span class="menu__balance"></span><span class="menu__card"></span>
+          <button class="menu__button">Снять наличные</button>
+        </div>
+        <div class="menu__bottom"></div>
+        <div class="cash">
+          <div class="cash__zone">
+            <input class="cash__input" type="text" placeholder="Введите сумму" maxlength="10">
+          </div>
+          <div class="available-nominal">Доступный номинал</div>
+          <div class="cash__nominals">
+            <div class="cash__100 cash__banknote"></div>
+            <div class="cash__200 cash__banknote"></div>
+            <div class="cash__500 cash__banknote"></div>
+            <div class="cash__1000 cash__banknote"></div>
+            <div class="cash__2000 cash__banknote"></div>
+            <div class="cash__5000 cash__banknote"></div>
+          </div>
+          <div class="output"> 
+            <p class="output__100"></p>
+            <p class="output__200"></p>
+            <p class="output__500"></p>
+            <p class="output__1000"> </p>
+            <p class="output__2000"></p>
+            <p class="output__5000"></p>
+          </div>
+          <div class="cash__buttons">
+            <button class="buttons__clear cash__button">Изменить сумму</button>
+            <button class="buttons__confirmation cash__button">Подтвердить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
