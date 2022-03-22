@@ -87,7 +87,7 @@ let banknotes = {
   1000: 10,
   500: 10,
   200: 10,
-  100: 10
+  100: 0
 };
 
 let personWantGet = (ammountNeeded, banknotes) => {
@@ -114,8 +114,8 @@ let personWantGet = (ammountNeeded, banknotes) => {
     let operation = collectedSum(ammountNeeded, nominals);
 
     balance.innerHTML = `ВАШ БАЛАНС: ${balanceCount} ₽`;
-    cashText.innerHTML = 'Выданные наличные';
-    cashText.style.color = 'black';
+    cashText.innerHTML = `${Object.keys(operation).length == 0 ? 'Недостаточно наличных для выдачи денег' : 'Выданные наличные'}`;
+    cashText.style.color = `${Object.keys(operation).length == 0 ? 'red' : 'black'}`;
     output100.innerHTML = `x${operation[100] === undefined ? 0 : operation[100]}`;
     output200.innerHTML = `x${operation[200] === undefined ? 0 : operation[200]}`;
     output500.innerHTML = `x${operation[500] === undefined ? 0 : operation[500]}`;
@@ -132,11 +132,7 @@ let personWantGet = (ammountNeeded, banknotes) => {
 
   function collectedSum(amount, nominals) {
     if (amount === 0) return {}; // успеш - банкнот достаточно
-    if (!nominals.length) { // ошибка - банкнот недостаточно
-      cashText.innerHTML = 'Недостаточно наличных для выдачи денег';
-      cashText.style.color = 'red';
-      return {}
-    };
+    if (!nominals.length) return {}; // ошибка - банкнот недостаточно
 
     let currentNominal = nominals[0]; // Номинал в текущем проходе рекурсии
     let availableNotes = banknotes[currentNominal]; // Кол-во банкнот текущего номинала
